@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz día</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #8b0000;
+            font-family: Arial, sans-serif;
+        }
+        .welcome {
+            font-size: 3em;
+            font-weight: bold;
+            color: #d4af37;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+            animation: glow 1s infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+            }
+            to {
+                text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff;
+            }
+        }
+        .flowers {
+            display: none;
+            margin-top: 20px;
+            flex-direction: row;
+        }
+        .flower {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            opacity: 0;
+            transform: scale(0);
+            animation: bloom 2s forwards;
+        }
+        .flower:nth-child(2) {
+            animation-delay: 1s;
+        }
+        .flower:nth-child(3) {
+            animation-delay: 2s;
+        }
+        @keyframes bloom {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .petal {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle at 15px 15px, yellow, orange);
+            border-radius: 50%;
+        }
+        .petal:nth-child(1) { transform: rotate(0deg) translate(25px); }
+        .petal:nth-child(2) { transform: rotate(45deg) translate(25px); }
+        .petal:nth-child(3) { transform: rotate(90deg) translate(25px); }
+        .petal:nth-child(4) { transform: rotate(135deg) translate(25px); }
+        .petal:nth-child(5) { transform: rotate(180deg) translate(25px); }
+        .petal:nth-child(6) { transform: rotate(225deg) translate(25px); }
+        .petal:nth-child(7) { transform: rotate(270deg) translate(25px); }
+        .petal:nth-child(8) { transform: rotate(315deg) translate(25px); }
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle at 10px 10px, yellow, orange);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .stem {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            width: 5px;
+            height: 100px;
+            background-color: green;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome">Feliz día amor ❤️</div>
+    <button onclick="showFlowers()">Presiona aquí</button>
+    <div class="flowers" id="flowers">
+        <div class="flower">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+            <div class="stem"></div>
+        </div>
+        <div class="flower">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+            <div class="stem"></div>
+        </div>
+        <div class="flower">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+            <div class="stem"></div>
+        </div>
+    </div>
+
+    <script>
+        function showFlowers() {
+            document.getElementById('flowers').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
